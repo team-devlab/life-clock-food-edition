@@ -1,23 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import HelloWorldScreen from "./screens/HelloWorldScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
+
+type Screen = "welcome" | "hello";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello, World! 👋</Text>
-    </View>
-  );
-}
+  const [screen, setScreen] = useState<Screen>("welcome");
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-  },
-  text: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "#333",
-  },
-});
+  if (screen === "hello") {
+    return <HelloWorldScreen onNavigateHome={() => setScreen("welcome")} />;
+  }
+  return <WelcomeScreen onNavigateHello={() => setScreen("hello")} />;
+}
