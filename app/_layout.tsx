@@ -8,9 +8,9 @@ import { Shadow } from 'react-native-shadow-2';
 type IoniconsName = ComponentProps<typeof Ionicons>['name'];
 
 const FOOTER_ITEMS: { icon: IoniconsName; href: string; isCenter: boolean }[] = [
-    { icon: 'home-outline', href: '/home', isCenter: false },
-    { icon: 'add', href: '/new-bookmark', isCenter: true },
-    { icon: 'albums-outline', href: '/album', isCenter: false },
+    { icon: 'home-outline', href: '/home', isCenter: false, label: 'ホーム' },
+    { icon: 'add', href: '/new-bookmark', isCenter: true,  label: 'しおりを残す' },
+    { icon: 'albums-outline', href: '/album', isCenter: false, label: 'アルバム'},
 ];
 
 // フッターを表示しない画面
